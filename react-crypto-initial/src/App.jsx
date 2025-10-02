@@ -1,8 +1,6 @@
 import React from "react";
-import { Layout } from "antd";
-import AppHeader from "./components/layout/HeaderLayout";
-import AppSider from "./components/layout/SiderLayout";
-import AppContent from "./components/layout/ContentLayout";
+import { CryptoContextProvider } from "./context/crypto-context";
+import AppLayout from "./components/layout/AppLayout";
 
 const layoutStyle = {
   overflow: "hidden",
@@ -10,13 +8,9 @@ const layoutStyle = {
 
 const App = () => {
   return (
-    <Layout style={layoutStyle}>
-      <AppHeader />
-      <Layout>
-        <AppSider />
-        <AppContent />
-      </Layout>
-    </Layout>
+    <CryptoContextProvider>
+     <AppLayout />
+    </CryptoContextProvider>
   );
 };
 
